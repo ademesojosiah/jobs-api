@@ -6,6 +6,13 @@ const connectDB = require('./db/connect')
 
 
 
+//import my routers
+const jobsRouter = require('./routes/jobs')
+const authRouter = require('./routes/auth')
+
+
+
+
 
 
 // error handler 
@@ -21,7 +28,9 @@ app.use(express.json())
 
 
 
-
+//routes
+app.use('/api/v1/jobs',jobsRouter)
+app.use('/api/v1/auth',authRouter )
 
 
 
