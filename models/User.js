@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs')
 const mongoose = require('mongoose')
 
 
@@ -20,9 +21,12 @@ const UserSchema = new mongoose.Schema({
     password:{
         type:String,
         required:[true,'Please Provide password'],
-        minlength:[6, 'minimium of 6'],
-        maxlength:12   
+        minlength:[6, 'minimium of 6'],  
     },
+})
+UserSchema.pre('save',async function(){
+    const salt = await bcrypt.genSalt(10)
+    this.password = await bcrypt.hash(this.password,salt)
 })
 
 
