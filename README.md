@@ -1,11 +1,3 @@
-# jobs-api
-
-#### Setup
-
-```bash
-npm install && npm start
-```
-
 #### Database Connection
 
 1. Import connect.js
@@ -18,13 +10,18 @@ npm install && npm start
 - auth.js
 - jobs.js
 
-#### User Model
+## controllers
+ - auth.js 
+ - jobs.js
 
-Email Validation Regex
+##  user model
+user schema
 
-```regex
+## regrex for the email 
+
+regrex
+
 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-```
 
 #### Register User
 
@@ -50,22 +47,3 @@ Email Validation Regex
 - Duplicate (Email)
 - Cast Error
 
-#### Security
-
-- helmet
-- cors
-- xss-clean
-- express-rate-limit
-
-Swagger UI
-
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
